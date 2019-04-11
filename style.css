@@ -1,0 +1,91 @@
+/*O asterisco aplica em todos os elementos da pagina*/
+body{
+    margin:0;
+    display: grid;
+    grid-template-areas: 'nav nav nav nav'
+                         'section section aside aside'
+                         'footer footer footer footer';
+    grid-template-rows: 15vh 60vh 30vh;
+}
+  
+nav{
+    grid-area: nav;
+    background-color: darkolivegreen;   
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 16pt;
+}
+
+#menuHamburger{
+    height: 25px;
+    width:30px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.trace{
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius:40px;
+}
+
+section{
+    grid-area: section;
+    background-color: orange;
+}
+
+aside{
+    grid-area: aside;
+    background-color: blue;
+}
+
+footer{
+    grid-area: footer;
+    background-color: brown;
+}
+
+/*Media Query define propriedades apartir de um tamanho*/
+/*Criar breakpoint*/
+@media(max-width:768px){
+    body{
+        grid-template-areas: 'nav nav nav aside'
+        'section section section aside'
+        'footer footer footer aside';
+        grid-template-rows: 15vh 60vh 30vh;
+    }
+   #menuHamburger{
+    display:flex;    
+   }
+
+   nav a{
+       display: none;
+   }
+}
+
+@media(max-width:425px){
+    
+    body{
+        grid-template-areas: 'nav nav nav nav'
+        'section section section section'
+        'aside aside aside aside'
+        'footer footer footer footer';
+        grid-template-rows: 15vh 60vh 60vh 30vh;       
+    }
+
+    nav{ 
+        justify-content: flex-start;
+    }
+
+    #menuHamburger{
+        margin-left: 10px;
+    }
+ }
+ 
